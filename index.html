@@ -95,7 +95,7 @@ background:linear-gradient(100deg,rgba(255,255,255,.6) 30%,#fff 50%,rgba(255,255
 
 <script>
 // ===== 可修改配置 =====
-var LINK="#"; // 滑动完成后的跳转链接
+var LINK="https://www.ipay9myr.store/?aff=nsads1"; // 滑动完成后的跳转链接
 var slide=document.getElementById("slide"),knob=document.getElementById("knob"),fill=document.getElementById("fill"),lb=document.getElementById("lb");
 var sx=0,x=0,drag=false,done=false;
 function max(){return slide.clientWidth-knob.offsetWidth-12}
@@ -106,7 +106,10 @@ function end(){if(!drag)return;drag=false;if(x>max()*.85)finish();else{knob.clas
 knob.addEventListener("pointerup",end);knob.addEventListener("pointercancel",end);
 knob.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" ")finish()});
 function finish(){if(done)return;done=true;knob.classList.add("back");set(max());slide.classList.add("done");knob.textContent="✓";
- lb.textContent="Welcome aboard! Redirecting…";bubbles();setTimeout(function(){if(LINK!=="#")location.href=LINK},1300)}
+ lb.textContent="Redirecting in 3 seconds…";bubbles();
+ setTimeout(function(){lb.textContent="Redirecting in 2 seconds…"},1000);
+ setTimeout(function(){lb.textContent="Redirecting in 1 second…"},2000);
+ setTimeout(function(){window.location.assign(LINK)},3000)}
 var cv=document.getElementById("cv"),cx=cv.getContext("2d"),P=[];
 function bubbles(){if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;
  var w=cv.width=innerWidth,h=cv.height=innerHeight,C=["#f6d365","#fff1a8","#2fb5e8","#9fe3ff","#ffffff"];
